@@ -1,5 +1,5 @@
 {
-  "name": "sendsay-api",
+  "name": "sendsay",
   "description": "Sendsay PHP SDK",
   "keywords": ["api","sendsay"],
   "type": "library",
