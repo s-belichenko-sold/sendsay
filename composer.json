@@ -2,7 +2,7 @@
   "name": "sendsay-api",
   "description": "Sendsay PHP SDK",
   "keywords": ["api","sendsay"],
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "homepage": "https://github.com",
   "authors": [
     {
