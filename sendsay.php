@@ -1,5 +1,5 @@
 <?php
-
+namespace ishapkin\sendsay;
 /**
  * Библиотека Sendsay API.
  *
