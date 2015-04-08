@@ -2,6 +2,7 @@
   "name": "sendsay-api",
   "description": "Sendsay PHP SDK",
   "keywords": ["api","sendsay"],
+  "type": "library",
   "minimum-stability": "dev",
   "homepage": "https://github.com",
   "authors": [
@@ -10,7 +11,6 @@
       "email": "me@alexmil.ru"
     }
   ],
-
   "require": {
     "php": ">=5.3.0"
   }
