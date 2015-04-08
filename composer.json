@@ -1,6 +1,5 @@
 {
   "name": "sendsay-api",
-  "license": "MIT",
   "description": "Sendsay PHP SDK",
   "keywords": ["api","sendsay"],
   "homepage": "https://github.com",
