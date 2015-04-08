@@ -2,6 +2,7 @@
   "name": "sendsay-api",
   "description": "Sendsay PHP SDK",
   "keywords": ["api","sendsay"],
+  "license": "MIT",
   "minimum-stability": "dev",
   "homepage": "https://github.com",
   "authors": [
@@ -16,6 +17,6 @@
   },
 
   "autoload": {
-    "classmap": [ "ishapkin/"]
+    "classmap": ["/"]
   }
 }
