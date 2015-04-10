@@ -35,7 +35,7 @@ class Sendsay
 	 * @param  string  пароль
 	 * @param  bool    вывод отладочной информации
 	 */
-	public function Sendsay($login, $sublogin, $password, $debug=FALSE)
+	public function __construct($login, $sublogin, $password, $debug=FALSE)
 	{
 		$this->debug = $debug;
 		$this->auth['one_time_auth'] = array(
