@@ -484,7 +484,6 @@ class Sendsay
 			'action'         => 'member.set',
 			'addr_type'      => $addr_type,
 			'email'          => $email,
-			'source'         => $_SERVER['REMOTE_ADDR'],
 			'if_exists'      => $if_exists,
 			'newbie.confirm' => $confirm,
 		);
@@ -828,7 +827,7 @@ class Sendsay
 	 * 
 	 * @return array
 	 */
-	public function group_snapshot($from, $to, $clean=FALSE, $sync=FALSE)
+	public function group_snapshot($from, $to, $clean=TRUE, $sync=FALSE)
 	{
 		$this->params = $this->auth+array(
 			'action' => 'group.snapshot',
@@ -838,7 +837,7 @@ class Sendsay
 
 		if (is_string($from))
 		{
-			$this->params['from']['group'] = $from;
+			$this->params['from']['email'] = $from;
 		}
 		elseif (is_array($from))
 		{
