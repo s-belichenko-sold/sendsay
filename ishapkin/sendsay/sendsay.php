@@ -478,7 +478,7 @@ class Sendsay
 	 * 
 	 * @return array
 	 */
-	public function member_set($email, $data=NULL, $notify=NULL, $confirm=FALSE, $if_exists='overwrite', $addr_type='email', $datakey = NULL)
+	public function member_set($email, $datakey = NULL, $data=NULL, $notify=NULL, $confirm=FALSE, $if_exists='overwrite', $addr_type='email')
 	{
 		$this->params = $this->auth+array(
 			'action'         => 'member.set',
@@ -492,7 +492,9 @@ class Sendsay
 			$this->param('obj', $data);
 		} elseif(isset($datakey)) {
 			$this->param('datakey', $data);
+			$this->param('return_fresh_obj', TRUE);
 		}
+
 		$this->param('newbie.letter.no-confirm', $notify);
 
 		return $this->send();
