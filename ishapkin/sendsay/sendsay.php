@@ -478,7 +478,7 @@ class Sendsay
 	 * 
 	 * @return array
 	 */
-	public function member_set($email, $data=NULL, $notify=NULL, $confirm=FALSE, $if_exists='overwrite', $addr_type='email')
+	public function member_set($email, $data=NULL, $notify=NULL, $confirm=FALSE, $if_exists='overwrite', $addr_type='email', $datakey = NULL)
 	{
 		$this->params = $this->auth+array(
 			'action'         => 'member.set',
@@ -487,8 +487,12 @@ class Sendsay
 			'if_exists'      => $if_exists,
 			'newbie.confirm' => $confirm,
 		);
-		
-		$this->param('obj', $data);
+
+		if(isset($data)) {
+			$this->param('obj', $data);
+		} elseif(isset($datakey)) {
+			$this->param('datakey', $data);
+		}
 		$this->param('newbie.letter.no-confirm', $notify);
 
 		return $this->send();
@@ -1539,6 +1543,25 @@ class Sendsay
 	}
 
 	/**
+	 * Сохраняет настройки.
+	 *
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D0%BE%D0%BC%D0%B5%D0%BD%D1%8F%D1%82%D1%8C-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8][Документация]
+	 *
+	 * @param  array  массив изменяемых параметров
+	 *
+	 * @return array
+	 */
+	public function sys_storage_get($options)
+	{
+		$this->params = $this->auth+array(
+				'action' => 'sys.settings.set',
+				'list'   => $options
+			);
+
+		return $this->send();
+	}
+
+	/**
 	 * Возвращает список пользователей.
 	 * 
 	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9][Документация]
@@ -1978,5 +2001,3 @@ function Sendsay($login, $sublogin, $password, $debug=FALSE)
 {
 	return new Sendsay($login, $sublogin, $password, $debug);
 }
-
-
