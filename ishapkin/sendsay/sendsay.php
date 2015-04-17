@@ -1085,7 +1085,7 @@ class Sendsay
 	 * 
 	 * @return array
 	 */
-	public function issue_send($group, $from, $sender='', $subject='', $text='', $users_list=NULL, $relink=array(), $sendwhen='now', $format='html')
+	public function issue_send($group, $from, $sender='', $subject='', $text='', $sendwhen='now', $users_list=NULL, $relink=array(), $format='html')
 	{
 		$this->params = $this->auth+array(
 			'action'       => 'issue.send',
