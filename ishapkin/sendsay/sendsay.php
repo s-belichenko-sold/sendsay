@@ -484,7 +484,7 @@ class Sendsay
 			'action'         => 'member.set',
 			'addr_type'      => $addr_type,
 			'email'          => $email,
-			'newbie.confirm' => $confirm,
+            'datakey'        => $datakey
 		);
 
         if(isset($if_exists)) {
@@ -493,12 +493,11 @@ class Sendsay
 
 		if(isset($data)) {
 			$this->param('obj', $data);
-		} elseif(isset($datakey)) {
-			$this->param('datakey', $data);
 		}
 
-		$this->param('newbie.letter.no-confirm', $notify);
-
+        if($confirm) {
+            $this->param('newbie.letter.no-confirm', $notify);
+        }
 		return $this->send();
 	}
 	
