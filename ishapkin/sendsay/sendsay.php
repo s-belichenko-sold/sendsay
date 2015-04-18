@@ -478,21 +478,23 @@ class Sendsay
 	 * 
 	 * @return array
 	 */
-	public function member_set($email, $datakey = NULL, $data=NULL, $notify=NULL, $confirm=FALSE, $if_exists='overwrite', $addr_type='email')
+	public function member_set($email, $datakey = NULL, $data=NULL, $notify=NULL, $confirm=FALSE, $if_exists=NULL, $addr_type='email')
 	{
 		$this->params = $this->auth+array(
 			'action'         => 'member.set',
 			'addr_type'      => $addr_type,
 			'email'          => $email,
-			'if_exists'      => $if_exists,
 			'newbie.confirm' => $confirm,
 		);
+
+        if(isset($if_exists)) {
+            $this->param('if_exists', $if_exists);
+        }
 
 		if(isset($data)) {
 			$this->param('obj', $data);
 		} elseif(isset($datakey)) {
 			$this->param('datakey', $data);
-			$this->param('return_fresh_obj', TRUE);
 		}
 
 		$this->param('newbie.letter.no-confirm', $notify);
@@ -962,7 +964,7 @@ class Sendsay
 	 * 
 	 * @return array
 	 */
-	public function member_import($data, $group=NULL, $exist='overwrite', $trigger=TRUE, $format=NULL, $confirm=NULL, $addr_type='email')
+	public function member_import($data, $group=NULL, $exist=NULL, $trigger=TRUE, $format=NULL, $confirm=NULL, $addr_type='email')
 	{
 		$this->params = $this->auth+array(
 			'action'         => 'member.import',
