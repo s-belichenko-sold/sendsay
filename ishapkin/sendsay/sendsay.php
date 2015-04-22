@@ -1,12 +1,10 @@
 <?php
-namespace ishapkin\sendsay;
-
 /**
  * Библиотека Sendsay API.
  *
  * @version 1.4
  * @author  Alex Milekhin (me@alexmil.ru)
- * @link    [https://api.sendsay.ru//API.html][Документация]
+ * @link    [https://pro.subscribe.ru/API/API.html][Документация]
  */
 class Sendsay
 {	
@@ -35,7 +33,7 @@ class Sendsay
 	 * @param  string  пароль
 	 * @param  bool    вывод отладочной информации
 	 */
-	public function __construct($login, $sublogin, $password, $debug=FALSE)
+	public function Sendsay($login, $sublogin, $password, $debug=FALSE)
 	{
 		$this->debug = $debug;
 		$this->auth['one_time_auth'] = array(
@@ -48,7 +46,7 @@ class Sendsay
 	/**
 	 * Проверяет доступность сервера Sendsay.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D0%B8%D0%BD%D0%B3-%D0%B1%D0%B5%D0%B7-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D0%B8%D0%BD%D0%B3-%D0%B1%D0%B5%D0%B7-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
 	 * 
 	 * @return bool
 	 */
@@ -64,7 +62,7 @@ class Sendsay
 	/**
 	 * Пинг с авторизацией.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D0%B8%D0%BD%D0%B3-%D1%81-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D0%B8%D0%BD%D0%B3-%D1%81-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9][Документация]
 	 * 
 	 * @return bool
 	 */
@@ -82,7 +80,7 @@ class Sendsay
 	/**
 	 * Возвращает список асинхронных запросов.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2][Документация]
 	 * 
 	 * @param  array  фильтр; массив должен содержать хотя бы один параметр
 	 * 
@@ -101,7 +99,7 @@ class Sendsay
 	/**
 	 * Возвращает описание асинхронного запроса.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0][Документация]
 	 * 
 	 * @param  int  код запроса
 	 * 
@@ -120,7 +118,7 @@ class Sendsay
 	/**
 	 * Возвращает список форматов и шаблонов.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%BE%D0%B2%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%BE%D0%B2%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2][Документация]
 	 * 
 	 * @return array
 	 */
@@ -136,7 +134,7 @@ class Sendsay
 	/**
 	 * Создаёт или изменяет формат или шаблон.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BB%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B0%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BB%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B0%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%B0][Документация]
 	 * 
 	 * @param  array   данные формата (см. докумендацию)
 	 * @param  string  код формата
@@ -158,7 +156,7 @@ class Sendsay
 	/**
 	 * Считывает формат или шаблон.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B0%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B0%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%B0][Документация]
 	 * 
 	 * @param  string  код формата
 	 * 
@@ -177,7 +175,7 @@ class Sendsay
 	/**
 	 * Удаляет формат или шаблон.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B0%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B0%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%B0][Документация]
 	 * 
 	 * @param  string  код формата
 	 * 
@@ -196,7 +194,7 @@ class Sendsay
 	/**
 	 * Возвращает список анкет.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82][Документация]
 	 * 
 	 * @return array
 	 */
@@ -212,7 +210,7 @@ class Sendsay
 	/**
 	 * Возвращает данные анкеты.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
 	 * 
 	 * @param  string  код анкеты
 	 * 
@@ -231,7 +229,7 @@ class Sendsay
 	/**
 	 * Удаляет анкету.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
 	 * 
 	 * @param  string  код анкеты
 	 * 
@@ -250,7 +248,7 @@ class Sendsay
 	/**
 	 * Создаёт анкету.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
 	 * 
 	 * @param  string  название анкеты
 	 * @param  string  код анкеты
@@ -274,7 +272,7 @@ class Sendsay
 	/**
 	 * Изменяет название анкеты.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
 	 * 
 	 * @param  string  код анкеты
 	 * @param  string  название анкеты
@@ -295,7 +293,7 @@ class Sendsay
 	/**
 	 * Добавляет вопрос в анкету.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
 	 * 
 	 * @param  string  код анкеты
 	 * @param  array   один или несколько вопросов анкеты
@@ -316,7 +314,7 @@ class Sendsay
 	/**
 	 * Изменяет вопросы анкеты.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
 	 * 
 	 * @param  string  код анкеты
 	 * @param  array   один или несколько вопросов анкеты
@@ -337,7 +335,7 @@ class Sendsay
 	/**
 	 * Удаляет вопрос из анкеты.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
 	 * 
 	 * @param  string  код анкеты
 	 * @param  mixed   один (string) или несколько (array) вопросов анкеты
@@ -358,7 +356,7 @@ class Sendsay
 	/**
 	 * Изменяет порядок вопросов анкеты.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
 	 * 
 	 * @param  string  код анкеты
 	 * @param  mixed   коды вопросов анкеты в нужном порядке
@@ -379,7 +377,7 @@ class Sendsay
 	/**
 	 * Изменяет порядок ответов.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0][Документация]
 	 * 
 	 * @param  string  код анкеты
 	 * @param  string  код вопроса
@@ -402,7 +400,7 @@ class Sendsay
 	/**
 	 * Удаляет ответ из вопроса анкеты.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D1%8B][Документация]
 	 * 
 	 * @param  string  код анкеты
 	 * @param  string  код вопроса
@@ -425,7 +423,7 @@ class Sendsay
 	/**
 	 * Проверяет список адресов на синтаксическую верность, доступность и возвращает нормализованый вариант написания.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%BE%D0%B2][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%BE%D0%B2][Документация]
 	 * 
 	 * @param  array  список емэйлов
 	 * @param  int    проверять доступность по smtp (1) или нет (0)
@@ -448,7 +446,7 @@ class Sendsay
 	/**
 	 * Запрашивает ответы подписчика.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8B-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8B-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0][Документация]
 	 * 
 	 * @param  string  емэйл подписчика
 	 * 
@@ -467,7 +465,7 @@ class Sendsay
 	/**
 	 * Добавляет нового подписчика или обновляет существующего.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#C%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8B-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#C%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8B-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0][Документация]
 	 * 
 	 * @param  string  емэйл подписчика
 	 * @param  array   массив с данными подписчика
@@ -478,33 +476,27 @@ class Sendsay
 	 * 
 	 * @return array
 	 */
-	public function member_set($email, $datakey = NULL, $data=NULL, $notify=NULL, $confirm=FALSE, $if_exists=NULL, $addr_type='email')
+	public function member_set($email, $data=NULL, $notify=NULL, $confirm=FALSE, $if_exists='overwrite', $addr_type='email')
 	{
 		$this->params = $this->auth+array(
 			'action'         => 'member.set',
 			'addr_type'      => $addr_type,
 			'email'          => $email,
-            'datakey'        => $datakey
+			'source'         => $_SERVER['REMOTE_ADDR'],
+			'if_exists'      => $if_exists,
+			'newbie.confirm' => $confirm,
 		);
+		
+		$this->param('obj', $data);
+		$this->param('newbie.letter.no-confirm', $notify);
 
-        if(isset($if_exists)) {
-            $this->param('if_exists', $if_exists);
-        }
-
-		if(isset($data)) {
-			$this->param('obj', $data);
-		}
-
-        if($confirm) {
-            $this->param('newbie.letter.no-confirm', $notify);
-        }
 		return $this->send();
 	}
 	
 	/**
 	 * Удаляет пользователя из списка рассылки.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0][Документация]
 	 * 
 	 * @param  mixed  список удаляемых емэйлов (array) или код группы (string)
 	 * @param  bool   флаг асинхронного запуска
@@ -534,7 +526,7 @@ class Sendsay
 	 * Извлекает список выпусков в архиве.
 	 * Входные параметры — необязательные фильтры.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%B2-%D0%B2-%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B5][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%B2-%D0%B2-%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B5][Документация]
 	 * 
 	 * @param  string  начиная с даты (формат YYYY-MM-DD)
 	 * @param  string  заканчивая датой (формат YYYY-MM-DD)
@@ -560,7 +552,7 @@ class Sendsay
 	/**
 	 * Извлекает информацию о выпуске в архиве.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D0%B2-%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B5][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D0%B2-%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B5][Документация]
 	 * 
 	 * @param  int  уникальный идентификатор выпуска
 	 * 
@@ -579,7 +571,7 @@ class Sendsay
 	/**
 	 * Извлекает статистику активности подписчиков.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%BE%D0%B2][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%BE%D0%B2][Документация]
 	 * 
 	 * @param  array   фильтр; может содержать следующие параметры:
 	 *                     gid — код группы
@@ -625,7 +617,7 @@ class Sendsay
 	/**
 	 * Запрашивает статистику по выпускам.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%B2][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%B2][Документация]
 	 * 
 	 * @param  string  начиная с даты (формат YYYY-MM-DD)
 	 * @param  string  заканчивая датой (формат YYYY-MM-DD)
@@ -667,7 +659,7 @@ class Sendsay
 	 * Универсальная функция извлечения статистики.
 	 * Позволяет получить информацию про переходы, открытия писем, тиражи выпусков и результаты доставки.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0][Документация]
 	 * 
 	 * @param  array   список полей и функций для выборки
 	 * @param  array   фильтр результатов
@@ -706,7 +698,7 @@ class Sendsay
 	/**
 	 * Возвращает список групп.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#C%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B3%D1%80%D1%83%D0%BF%D0%BF][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#C%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B3%D1%80%D1%83%D0%BF%D0%BF][Документация]
 	 * 
 	 * @return array
 	 */
@@ -722,7 +714,7 @@ class Sendsay
 	/**
 	 * Создаёт группу.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83][Документация]
 	 * 
 	 * @param  string  название группы
 	 * @param  string  тип группы (list|filter)
@@ -748,7 +740,7 @@ class Sendsay
 	/**
 	 * Удаляет участников группы-списка.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9E%D1%87%D0%B8%D1%81%D1%82%D0%B8%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9E%D1%87%D0%B8%D1%81%D1%82%D0%B8%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA][Документация]
 	 * 
 	 * @param  string  код группы
 	 * @param  mixed   подписчики, которых надо удалить (all | string — емэйл подписчика | array — список емэйлов)
@@ -783,7 +775,7 @@ class Sendsay
 	/**
 	 * Изменяет название группы.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83][Документация]
 	 * 
 	 * @param  string  код группы
 	 * @param  string  название группы
@@ -804,7 +796,7 @@ class Sendsay
 	/**
 	 * Считывает группу.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83][Документация]
 	 * 
 	 * @param  mixed  код группы (string) или список групп (array)
 	 * @param  bool   возвращать фильтр группы
@@ -825,7 +817,7 @@ class Sendsay
 	/**
 	 * Создаёт копию подписчиков группы.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B-%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B8%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B-%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B8%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA][Документация]
 	 * 
 	 * @param  mixed   код группы (string) или список подписчиков (array)
 	 * @param  string  код группы
@@ -834,7 +826,7 @@ class Sendsay
 	 * 
 	 * @return array
 	 */
-	public function group_snapshot($from, $to, $clean=TRUE, $sync=FALSE)
+	public function group_snapshot($from, $to, $clean=FALSE, $sync=FALSE)
 	{
 		$this->params = $this->auth+array(
 			'action' => 'group.snapshot',
@@ -844,7 +836,7 @@ class Sendsay
 
 		if (is_string($from))
 		{
-			$this->params['from']['email'] = $from;
+			$this->params['from']['group'] = $from;
 		}
 		elseif (is_array($from))
 		{
@@ -857,7 +849,7 @@ class Sendsay
 	/**
 	 * Возвращает правила фильтрации группы.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B][Документация]
 	 * 
 	 * @param  string  код группы
 	 * 
@@ -876,7 +868,7 @@ class Sendsay
 	/**
 	 * Изменяет правила фильтрации группы.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B][Документация]
 	 * 
 	 * @param  string  код группы
 	 * @param  array   правила фильтрации
@@ -897,7 +889,7 @@ class Sendsay
 	/**
 	 * Удаляет группу.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83][Документация]
 	 * 
 	 * @param  string  код группы
 	 * 
@@ -916,7 +908,7 @@ class Sendsay
 	/**
 	 * Возвращает общую статистику по группе.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9E%D0%B1%D1%89%D0%B0%D1%8F-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%BF%D0%BE-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B5][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9E%D0%B1%D1%89%D0%B0%D1%8F-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%BF%D0%BE-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B5][Документация]
 	 * 
 	 * @param  array   коды групп; если пусто - по всем
 	 * @param  mixed   способ возврата результата; тип (response|save) или список получателей (array)
@@ -948,7 +940,7 @@ class Sendsay
 	 * В случае указания ссылки на список подписчиков, файл должен быть в UTF-8, а поля разделяться запятыми (CSV-формат).
 	 * Первой строкой или элементом массива идёт заголовок.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%92%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%BE%D0%B2][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%92%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%BE%D0%B2][Документация]
 	 * 
 	 * @param  mixed   список подписчиков
 	 *                     string — ссылка на файл с подписчиками;
@@ -963,7 +955,7 @@ class Sendsay
 	 * 
 	 * @return array
 	 */
-	public function member_import($data, $group=NULL, $exist=NULL, $trigger=TRUE, $format=NULL, $confirm=NULL, $addr_type='email')
+	public function member_import($data, $group=NULL, $exist='overwrite', $trigger=TRUE, $format=NULL, $confirm=NULL, $addr_type='email')
 	{
 		$this->params = $this->auth+array(
 			'action'         => 'member.import',
@@ -992,7 +984,6 @@ class Sendsay
 		
 		$this->param('auto_group', $group);
 		$this->param('format', $format);
-		$this->param('letter', $letter);
 		$this->param('newbie.letter.confirm', $confirm);
 		
 		return $this->send();
@@ -1001,7 +992,7 @@ class Sendsay
 	/**
 	 * Чтение черновика.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%B8%D0%BA%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%B8%D0%BA%D0%B0][Документация]
 	 * 
 	 * @param  int  код черновика
 	 * 
@@ -1020,7 +1011,7 @@ class Sendsay
 	/**
 	 * Создает или изменяет параметры и содержимое черновиков. Вызов не может быть применён к предустановленным черновикам.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BB%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%B8%D0%BA%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BB%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%B8%D0%BA%D0%B0][Документация]
 	 * 
 	 * @param  array  параметры черновика
 	 *                    name — название черновика
@@ -1053,7 +1044,7 @@ class Sendsay
 	/**
 	 * Удаляет черновик.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%B8%D0%BA%D0%B0][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%B8%D0%BA%D0%B0][Документация]
 	 * 
 	 * @param  mixed  код черновика (int) или список черновиков (array) к удалению
 	 * 
@@ -1072,7 +1063,7 @@ class Sendsay
 	/**
 	 * Асинхронно отправляет выпуск.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9E%D1%82%D0%BE%D1%81%D0%BB%D0%B0%D1%82%D1%8C-%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9E%D1%82%D0%BE%D1%81%D0%BB%D0%B0%D1%82%D1%8C-%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA][Документация]
 	 * 
 	 * @param  string  способ выпуска (код группы | masssending - экспресс-выпуск | personal - транзакционное письмо)
 	 * @param  mixed   код шаблона (int) или емэйл отправителя (string)
@@ -1086,7 +1077,7 @@ class Sendsay
 	 * 
 	 * @return array
 	 */
-	public function issue_send($group, $from, $sender='', $subject='', $text='', $sendwhen='now', $users_list=NULL, $relink=array(), $format='html')
+	public function issue_send($group, $from, $sender='', $subject='', $text='', $users_list=NULL, $relink=array(), $sendwhen='now', $format='html')
 	{
 		$this->params = $this->auth+array(
 			'action'       => 'issue.send',
@@ -1116,7 +1107,7 @@ class Sendsay
 	/**
 	 * Возвращает список последовательностей.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BEc%D1%82%D0%B5%D0%B9][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BEc%D1%82%D0%B5%D0%B9][Документация]
 	 * 
 	 * @return array
 	 */
@@ -1132,7 +1123,7 @@ class Sendsay
 	/**
 	 * Создаёт последовательность.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#C%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#C%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C][Документация]
 	 * 
 	 * @param  string  название последовательности
 	 * @param  bool    однократность последовательности
@@ -1160,7 +1151,7 @@ class Sendsay
 	/**
 	 * Возвращает параметры последовательности.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C][Документация]
 	 * 
 	 * @param  int  код последовательности
 	 * 
@@ -1179,7 +1170,7 @@ class Sendsay
 	/**
 	 * Изменяет параметры последовательности.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C][Документация]
 	 * 
 	 * @param  int     код последовательности
 	 * @param  string  название последовательности
@@ -1209,7 +1200,7 @@ class Sendsay
 	/**
 	 * Удаляет последовательность.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C][Документация]
 	 * 
 	 * @param  int  код последовательности
 	 * 
@@ -1228,7 +1219,7 @@ class Sendsay
 	/**
 	 * Получает список шагов последовательности.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%88%D0%B0%D0%B3%D0%BE%D0%B2][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%88%D0%B0%D0%B3%D0%BE%D0%B2][Документация]
 	 * 
 	 * @param  int  код последовательности
 	 * 
@@ -1247,7 +1238,7 @@ class Sendsay
 	/**
 	 * Задаёт шаги последовательности.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%88%D0%B0%D0%B3%D0%BE%D0%B2][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%88%D0%B0%D0%B3%D0%BE%D0%B2][Документация]
 	 * 
 	 * @param  int    код последовательности
 	 * @param  array  шаги последовательности
@@ -1268,7 +1259,7 @@ class Sendsay
 	/**
 	 * Запрашивает статистику последовательности.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
 	 * 
 	 * @param  int  код последовательности
 	 * 
@@ -1287,7 +1278,7 @@ class Sendsay
 	/**
 	 * Возвращает список участников последовательности.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
 	 * 
 	 * @param  int     код последовательности
 	 * @param  string  способ группировки (member|step) или не группировать (NULL)
@@ -1311,7 +1302,7 @@ class Sendsay
 	/**
 	 * Отправляет подписчика на последовательность.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9D%D0%B0%D1%87%D0%B0%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9D%D0%B0%D1%87%D0%B0%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
 	 * 
 	 * @param  int    код последовательности
 	 * @param  mixed  список емэйлов (array) или код группы (string)
@@ -1340,7 +1331,7 @@ class Sendsay
 	/**
 	 * Приостанавливает прохождение подписчиком последовательности.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D1%80%D0%B8%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D1%80%D0%B8%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
 	 * 
 	 * @param  int    код последовательности
 	 * @param  mixed  список емэйлов (array) или код группы (string)
@@ -1369,7 +1360,7 @@ class Sendsay
 	/**
 	 * Возобновляет прохождение подписчиком последовательности.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%92%D0%BE%D0%B7%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%92%D0%BE%D0%B7%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
 	 * 
 	 * @param  int    код последовательности
 	 * @param  mixed  список емэйлов (array) или код группы (string)
@@ -1398,7 +1389,7 @@ class Sendsay
 	/**
 	 * Завершает прохождение подписчиками последовательности.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D1%80%D0%B5%D1%80%D0%B2%D0%B0%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D1%80%D0%B5%D1%80%D0%B2%D0%B0%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8][Документация]
 	 * 
 	 * @param  int    код последовательности
 	 * @param  mixed  список емэйлов (array) или код группы (string)
@@ -1427,7 +1418,7 @@ class Sendsay
 	/**
 	 * Возвращает список последовательностей, где числится указанный подписчик.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B2-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8F%D1%85][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B2-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8F%D1%85][Документация]
 	 * 
 	 * @param  string  емэйл подписчика
 	 * @param  mixed   код последовательности (int)
@@ -1449,7 +1440,7 @@ class Sendsay
 	/**
 	 * Загружает картинку на сервер.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D1%84%D0%B0%D0%B9%D0%BB][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D1%84%D0%B0%D0%B9%D0%BB][Документация]
 	 * 
 	 * @param  string  расположение загружаемого файла
 	 * @param  string  директория загрузки файла с именем файла (несуществующие каталоги не создаются)
@@ -1472,7 +1463,7 @@ class Sendsay
 	/**
 	 * Создаёт каталог.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#C%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#C%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3][Документация]
 	 *
 	 * @param  string  полный путь с названием каталога (несуществующие каталоги создаются)
 	 * 
@@ -1493,7 +1484,7 @@ class Sendsay
 	 * Удаляет каталог.
 	 * Примечание: католог должен быть пустым.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3][Документация]
 	 *
 	 * @param  string  полный путь с названием каталога
 	 * 
@@ -1513,7 +1504,7 @@ class Sendsay
 	/**
 	 * Возвращает список настроек.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8][Документация]
 	 * 
 	 * @return array
 	 */
@@ -1529,7 +1520,7 @@ class Sendsay
 	/**
 	 * Сохраняет настройки.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D0%BE%D0%BC%D0%B5%D0%BD%D1%8F%D1%82%D1%8C-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9F%D0%BE%D0%BC%D0%B5%D0%BD%D1%8F%D1%82%D1%8C-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8][Документация]
 	 * 
 	 * @param  array  массив изменяемых параметров
 	 *
@@ -1546,28 +1537,9 @@ class Sendsay
 	}
 
 	/**
-	 * Сохраняет настройки.
-	 *
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9F%D0%BE%D0%BC%D0%B5%D0%BD%D1%8F%D1%82%D1%8C-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8][Документация]
-	 *
-	 * @param  array  массив изменяемых параметров
-	 *
-	 * @return array
-	 */
-	public function sys_storage_get($options)
-	{
-		$this->params = $this->auth+array(
-				'action' => 'sys.settings.set',
-				'list'   => $options
-			);
-
-		return $this->send();
-	}
-
-	/**
 	 * Возвращает список пользователей.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9][Документация]
 	 *
 	 * @return array
 	 */
@@ -1583,7 +1555,7 @@ class Sendsay
 	/**
 	 * Создаёт пользователя.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F][Документация]
 	 *
 	 * @param  string  саблогин
 	 * @param  string  пароль
@@ -1607,7 +1579,7 @@ class Sendsay
 	/**
 	 * Удаляет пользователя.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F][Документация]
 	 *
 	 * @param  string  саблогин
 	 *
@@ -1626,7 +1598,7 @@ class Sendsay
 	/**
 	 * Изменяет пароль и статус пользователя.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8F-%D0%B8-%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0-%D0%BB%D1%8E%D0%B1%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8F-%D0%B8-%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0-%D0%BB%D1%8E%D0%B1%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F][Документация]
 	 *
 	 * @param  string  саблогин
 	 * @param  int     состояние пользователя (−1 — заставить сменить пароль | 0 — активировать | 1 — заблокировать)
@@ -1654,7 +1626,7 @@ class Sendsay
 	/**
 	 * Изменяет пароль текущего пользователя.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8F-%D1%81%D0%B5%D0%B1%D0%B5][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8F-%D1%81%D0%B5%D0%B1%D0%B5][Документация]
 	 *
 	 * @param  string  старый пароль
 	 * @param  string  новый пароль
@@ -1675,7 +1647,7 @@ class Sendsay
 	/**
 	 * Отправляет сообщение в техподдержку.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D1%81%D0%B0%D0%BF%D0%BF%D0%BE%D1%80%D1%82][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D1%81%D0%B0%D0%BF%D0%BF%D0%BE%D1%80%D1%82][Документация]
 	 *
 	 * @param  string  емэйл для связи
 	 * @param  string  текст сообщения
@@ -1696,7 +1668,7 @@ class Sendsay
 	/**
 	 * Запрашивает лог активности аккаунта.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B][Документация]
 	 *
 	 * @param  datetime  дата события от (формат ГГГГ-ММ-ДД ЧЧ:ММ:СС)
 	 * @param  datetime  дата события по (формат ГГГГ-ММ-ДД ЧЧ:ММ:СС)
@@ -1718,7 +1690,7 @@ class Sendsay
 	/**
 	 * Запрашивает права доступа пользователя.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%B2][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%B2][Документация]
 	 *
 	 * @param  string  логин пользователя
 	 *
@@ -1737,7 +1709,7 @@ class Sendsay
 	/**
 	 * Уставнавливает права доступа пользователя.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D1%80%D0%B0%D0%B2][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D1%80%D0%B0%D0%B2][Документация]
 	 *
 	 * @param  string  логин пользователя
 	 * @param  array   список устанавливаемых прав
@@ -1758,7 +1730,7 @@ class Sendsay
 	/**
 	 * Возвращает список внешних авторизаций.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D1%85-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B9][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D1%85-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B9][Документация]
 	 *
 	 * @return array
 	 */
@@ -1774,7 +1746,7 @@ class Sendsay
 	/**
 	 * Считывает параметры внешней авторизации.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B9-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B9-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
 	 * 
 	 * @param  string  код внешней авторизации
 	 *
@@ -1793,7 +1765,7 @@ class Sendsay
 	/**
 	 * Создаёт внешнюю авторизацию.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B9-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B9-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
 	 * 
 	 * @param  string  логин внешней авторизации
 	 * @param  string  токен внешней авторизации (refresh token)
@@ -1815,7 +1787,7 @@ class Sendsay
 	/**
 	 * Изменяет внешнюю авторизацию.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B9-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B9-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
 	 * 
 	 * @param  string  код внешней авторизации
 	 * @param  string  логин внешней авторизации
@@ -1840,7 +1812,7 @@ class Sendsay
 	/**
 	 * Удаляет внешнюю авторизацию.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B9-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B9-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
 	 * 
 	 * @param  string  код внешней авторизации
 	 *
@@ -1859,7 +1831,7 @@ class Sendsay
 	/**
 	 * Возвращает информацию об авторизации в Google Analytics.
 	 * 
-	 * @link  [https://api.sendsay.ru//API.html#%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F-%D0%BE%D0%B1-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-%D0%B2-Google-Analitics][Документация]
+	 * @link  [https://pro.subscribe.ru/API/API.html#%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F-%D0%BE%D0%B1-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-%D0%B2-Google-Analitics][Документация]
 	 * 
 	 * @param  string  код внешней авторизации
 	 *
@@ -1960,7 +1932,7 @@ class Sendsay
 			echo '<pre>Запрос:'."\n".$this->json_dump(print_r(json_encode($this->params), TRUE))."\n";
 		}
 		
-		$curl = curl_init('https://api.sendsay.ru/'.$redirect.'?apiversion=100&json=1');
+		$curl = curl_init('https://pro.subscribe.ru/api'.$redirect.'?apiversion=100&json=1');
 		
 		curl_setopt($curl, CURLOPT_POST, TRUE);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, 'request='.urlencode(json_encode($this->params)));
