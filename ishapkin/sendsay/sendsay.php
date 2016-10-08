@@ -1064,7 +1064,7 @@ class Sendsay
 	 *
 	 * @return array
 	 */
-	public function issue_send($group, $from, $sender='', $subject='', $text='', $sendwhen='now', $laterTime = null, $users_list=NULL, $relink=array(), $format='html')
+	public function issue_send($group, $from, $sender='', $subject='', $text='', $sendwhen='now', $laterTime = null, $email = null, $users_list=NULL, $relink=array(), $format='html')
 	{
 
 		$params = array(
@@ -1079,7 +1079,8 @@ class Sendsay
 			),
 			'sendwhen'     => $sendwhen,
 			'relink'       => is_null($relink) ? 0 : 1,
-			'relink.param' => is_null($relink) ? array() : array_merge(array('link' => 1, 'image' => 0, 'test' => 1), $relink)
+			'relink.param' => is_null($relink) ? array() : array_merge(array('link' => 1, 'image' => 0, 'test' => 1), $relink),
+            'email'        => $email
 		);
 
 		if($sendwhen == 'later') {
