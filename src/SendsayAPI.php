@@ -5,11 +5,11 @@ namespace StudioSold\Sendsay;
 /**
  * Библиотека Sendsay API.
  *
- * @version 1.4
+ * @version 1.5.1
  * @author  Alex Milekhin (me@alexmil.ru)
  * @link    [https://api.sendsay.ru//API.html][Документация]
  */
-class Sendsay
+class SendsayAPI
 {
     /**
      * @var array $auth   - массив с авторизационными данными
