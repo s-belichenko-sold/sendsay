@@ -2,7 +2,7 @@
     "name": "ishapkin/sendsay",
     "description": "Sendsay PHP SDK",
     "require": {
-        "php": ">=5.3.0"
+      "php": ">=5.4.0"
     },
     "autoload": {
         "classmap": [ "ishapkin/"]
