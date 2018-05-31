@@ -5,7 +5,7 @@ namespace StudioSold\Sendsay;
 /**
  * Библиотека Sendsay API.
  *
- * @version 1.5.1
+ * @version 1.5.2
  * @author  Alex Milekhin (me@alexmil.ru)
  * @link    [https://api.sendsay.ru//API.html][Документация]
  */
@@ -1971,20 +1971,3 @@ class SendsayAPI
         return $json;
     }
 }
-
-/**
- * Создаёт экземпляр класса Sendsay.
- *
- * @param  string $login    - общий логин
- * @param  string $sublogin - личный логин
- * @param  string $password - пароль
- * @param  bool   $debug    -   вывод отладочной информации
- *
- * @return Sendsay
- */
-function Sendsay($login, $sublogin, $password, $debug = false)
-{
-    return new Sendsay($login, $sublogin, $password, $debug);
-}
-
-
