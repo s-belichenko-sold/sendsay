@@ -27,8 +27,7 @@ class QuestionnaireQuestionAnswer extends SendsayAPI implements DataModel
      * @link  [https://sendsay.ru/api/api.html#C%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8B-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0-%D0%90%D0%92%D0%9E][Документация]
      *
      * @param string $email               - емэйл подписчика
-     * @param array  $datakey             - массив с данными подписчика
-     * @param mixed  $data                - код шаблона письма-приветствия (int) или не высылать письмо (NULL)
+     * @param array  $data                - массив с данными подписчика (согласно схеме данных АВО)
      * @param bool   $confirm             - необходимость подтверждения внесения в базу
      * @param int    $template_no_confirm - номер шаблона письма, которое высылается, если пользователь был добавлен
      *                                    без необходимости подтверждения
@@ -42,7 +41,6 @@ class QuestionnaireQuestionAnswer extends SendsayAPI implements DataModel
      */
     public function member_set(
         $email,
-        $datakey = null,
         $data = null,
         $confirm = false,
         $template_no_confirm = null,
@@ -60,11 +58,10 @@ class QuestionnaireQuestionAnswer extends SendsayAPI implements DataModel
 
         if (isset($data)) {
             $this->param('obj', $data);
-        } elseif (isset($datakey)) {
-            $this->param('datakey', $data);
             $this->param('return_fresh_obj', true);
         }
 
+        $this->param('newbie.letter.confirm', $template_confirm);
         $this->param('newbie.letter.no-confirm', $template_no_confirm);
 
         return $this->send();

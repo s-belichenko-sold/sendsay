@@ -17,7 +17,6 @@ interface DataModel
      * интерфейса
      *
      * @param string $email
-     * @param array  $datakey
      * @param mixed  $data
      * @param bool   $confirm
      * @param int    $template_no_confirm
@@ -30,7 +29,6 @@ interface DataModel
      */
     public function member_set(
         $email,
-        $datakey = null,
         $data = null,
         $confirm = false,
         $template_no_confirm = null,

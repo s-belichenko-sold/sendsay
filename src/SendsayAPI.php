@@ -5,7 +5,7 @@ namespace StudioSold\Sendsay;
 /**
  * Библиотека Sendsay API.
  *
- * @version 1.6.1
+ * @version 1.6.2
  * @author  Alex Milekhin (me@alexmil.ru)
  * @link    [https://sendsay.ru/api/api.html][Документация]
  */
