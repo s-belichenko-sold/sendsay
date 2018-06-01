@@ -638,6 +638,7 @@ class SendsayAPI
         switch ($this->params['result']) {
             case 'email':
                 $this->params['email'] = $result;
+                $this->params['result.format'] = $format;
                 break;
             case 'save':
                 $this->params['result.format'] = $format;
@@ -689,6 +690,7 @@ class SendsayAPI
         switch ($this->params['result']) {
             case 'email':
                 $this->params['email'] = $result;
+                $this->params['result.format'] = $format;
                 break;
             case 'save':
                 $this->params['result.format'] = $format;
@@ -738,6 +740,7 @@ class SendsayAPI
         switch ($this->params['result']) {
             case 'email':
                 $this->params['email'] = $result;
+                $this->params['result.format'] = $format;
                 break;
             case 'save':
                 $this->params['result.format'] = $format;
@@ -982,6 +985,7 @@ class SendsayAPI
         switch ($this->params['result']) {
             case 'email':
                 $this->params['email'] = $result;
+                $this->params['result.format'] = $format;
                 break;
             case 'save':
                 $this->params['result.format'] = $format;
