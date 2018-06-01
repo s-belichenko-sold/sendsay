@@ -5,20 +5,20 @@ namespace StudioSold\Sendsay;
 /**
  * Библиотека Sendsay API.
  *
- * @version 1.5.3
+ * @version 1.6.0
  * @author  Alex Milekhin (me@alexmil.ru)
  * @link    [https://sendsay.ru/api/api.html][Документация]
  */
-class SendsayAPI
+abstract class SendsayAPI
 {
     /**
      * @var array $auth   - массив с авторизационными данными
      * @var       $params - параметры запроса
      * @var bool  $debug  - вывод отладочной информации
      */
-    private $auth  = array();
-    private $params;
-    public  $debug = false;
+    protected $auth  = array();
+    protected $params;
+    public    $debug = false;
 
 
     /**
@@ -455,51 +455,6 @@ class SendsayAPI
                 'smtp.timeout' => $timeout,
                 'list'         => $list
             );
-
-        return $this->send();
-    }
-
-    /**
-     * Добавляет нового подписчика или обновляет существующего.
-     *
-     * @link  [https://sendsay.ru/api/api.html#C%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8B-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%87%D0%B8%D0%BA%D0%B0][Документация]
-     *
-     * @param string $email     - емэйл подписчика
-     * @param array  $datakey   - массив с данными подписчика
-     * @param mixed  $data      - код шаблона письма-приветствия (int) или не высылать письмо (NULL)
-     * @param int    $notify    - необходимость подтверждения внесения в базу
-     * @param bool   $confirm   - правило изменения ответов анкетных данных (error|update|overwrite)
-     * @param string $if_exists - тип адреса подписчика (email|msisdn)
-     * @param string $addr_type
-     *
-     * @return array
-     * @throws \Exception
-     */
-    public function member_set(
-        $email,
-        $datakey = null,
-        $data = null,
-        $notify = null,
-        $confirm = false,
-        $if_exists = 'overwrite',
-        $addr_type = 'email'
-    ) {
-        $this->params = $this->auth + array(
-                'action'         => 'member.set',
-                'addr_type'      => $addr_type,
-                'email'          => $email,
-                'if_exists'      => $if_exists,
-                'newbie.confirm' => $confirm,
-            );
-
-        if (isset($data)) {
-            $this->param('obj', $data);
-        } elseif (isset($datakey)) {
-            $this->param('datakey', $data);
-            $this->param('return_fresh_obj', true);
-        }
-
-        $this->param('newbie.letter.no-confirm', $notify);
 
         return $this->send();
     }
@@ -2013,7 +1968,7 @@ class SendsayAPI
      * @param  string $name  - название параметра
      * @param  mixed  $value - значение параметра
      */
-    private function param($name, $value = null)
+    protected function param($name, $value = null)
     {
         if ($value !== null) {
             $this->params[$name] = $value;
@@ -2028,7 +1983,7 @@ class SendsayAPI
      * @return array
      * @throws \Exception
      */
-    private function send($redirect = '')
+    protected function send($redirect = '')
     {
         if ($this->debug) {
             echo '<pre>Запрос:' . "\n" . $this->json_dump(print_r(json_encode($this->params, JSON_UNESCAPED_UNICODE),
