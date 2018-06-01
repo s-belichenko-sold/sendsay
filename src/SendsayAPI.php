@@ -2009,7 +2009,7 @@ abstract class SendsayAPI
 
         if (array_key_exists('errors', $json)) {
             if (!$this->debug) {
-                $message = implode(';', array_column($json['errors'], 'explain'));
+                $message = implode(';', array_column($json['errors'], 'id'));
             } else {
                 $errors_id = implode(';', array_column($json['errors'], 'id'));
                 $errors_text = implode(';', array_column($json['errors'], 'explain'));
