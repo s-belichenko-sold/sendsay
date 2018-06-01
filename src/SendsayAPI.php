@@ -5,7 +5,7 @@ namespace StudioSold\Sendsay;
 /**
  * Библиотека Sendsay API.
  *
- * @version 1.6.0
+ * @version 1.6.1
  * @author  Alex Milekhin (me@alexmil.ru)
  * @link    [https://sendsay.ru/api/api.html][Документация]
  */
@@ -2025,7 +2025,13 @@ abstract class SendsayAPI
         }
 
         if (!$json) {
-            return array('error' => 'error/bad_json', 'explain' => $result);
+            $message = json_encode([
+                'http_code'   => $info['http_code'],
+                'errors_id'   => 'error/bad_json',
+                'errors_text' => $result
+            ], JSON_UNESCAPED_UNICODE);
+            throw new \Exception($message);
+
         }
 
         if (array_key_exists('REDIRECT', $json)) {
