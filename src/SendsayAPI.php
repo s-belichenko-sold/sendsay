@@ -45,6 +45,7 @@ class SendsayAPI
      * @link  [https://sendsay.ru/api/api.html#%D0%9F%D0%B8%D0%BD%D0%B3-%D0%B1%D0%B5%D0%B7-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8][Документация]
      *
      * @return bool
+     * @throws \Exception
      */
     public function ping()
     {
@@ -61,6 +62,7 @@ class SendsayAPI
      * @link  [https://sendsay.ru/api/api.html#%D0%9F%D0%B8%D0%BD%D0%B3-%D1%81-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B5%D0%B9][Документация]
      *
      * @return bool
+     * @throws \Exception
      */
     public function pong()
     {
@@ -81,6 +83,7 @@ class SendsayAPI
      * @param array $filter - фильтр; массив должен содержать хотя бы один параметр
      *
      * @return array
+     * @throws \Exception
      */
     public function track_list($filter)
     {
@@ -100,6 +103,7 @@ class SendsayAPI
      * @param int $id - код запроса
      *
      * @return array
+     * @throws \Exception
      */
     public function track_get($id)
     {
@@ -117,6 +121,7 @@ class SendsayAPI
      * @link  [https://sendsay.ru/api/api.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%BE%D0%B2%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2][Документация]
      *
      * @return array
+     * @throws \Exception
      */
     public function format_list()
     {
@@ -136,6 +141,7 @@ class SendsayAPI
      * @param string $id  - код формата
      *
      * @return array
+     * @throws \Exception
      */
     public function format_set($obj, $id = null)
     {
@@ -157,6 +163,7 @@ class SendsayAPI
      * @param string $id - код формата
      *
      * @return array
+     * @throws \Exception
      */
     public function format_get($id)
     {
@@ -176,6 +183,7 @@ class SendsayAPI
      * @param string $id - код формата
      *
      * @return array
+     * @throws \Exception
      */
     public function format_delete($id)
     {
@@ -193,6 +201,7 @@ class SendsayAPI
      * @link  [https://sendsay.ru/api/api.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B0%D0%BD%D0%BA%D0%B5%D1%82][Документация]
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_list()
     {
@@ -211,6 +220,7 @@ class SendsayAPI
      * @param string $id - код анкеты
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_get($id)
     {
@@ -230,6 +240,7 @@ class SendsayAPI
      * @param string $id - код анкеты
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_delete($id)
     {
@@ -251,6 +262,7 @@ class SendsayAPI
      * @param string $copy - код копируемой анкеты
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_create($name, $id = null, $copy = null)
     {
@@ -274,6 +286,7 @@ class SendsayAPI
      * @param string $name - название анкеты
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_set($id, $name)
     {
@@ -295,6 +308,7 @@ class SendsayAPI
      * @param array  $questions - один или несколько вопросов анкеты
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_quest_add($anketa, $questions)
     {
@@ -316,6 +330,7 @@ class SendsayAPI
      * @param array  $questions - один или несколько вопросов анкеты
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_quest_set($anketa, $questions)
     {
@@ -337,6 +352,7 @@ class SendsayAPI
      * @param mixed  $questions - один (string) или несколько (array) вопросов анкеты
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_quest_delete($anketa, $questions)
     {
@@ -358,6 +374,7 @@ class SendsayAPI
      * @param mixed  $order  - коды вопросов анкеты в нужном порядке
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_quest_order($anketa, $order)
     {
@@ -380,6 +397,7 @@ class SendsayAPI
      * @param array  $order    - коды ответов в нужном порядке
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_quest_response_order($anketa, $question, $order)
     {
@@ -403,6 +421,7 @@ class SendsayAPI
      * @param string $answer   - код ответа
      *
      * @return array
+     * @throws \Exception
      */
     public function anketa_quest_response_delete($anketa, $question, $answer)
     {
@@ -426,6 +445,7 @@ class SendsayAPI
      * @param int   $timeout - таймаут в секундах
      *
      * @return array
+     * @throws \Exception
      */
     public function email_test($list, $smtp = 0, $timeout = 15)
     {
@@ -453,6 +473,7 @@ class SendsayAPI
      * @param string $addr_type
      *
      * @return array
+     * @throws \Exception
      */
     public function member_set(
         $email,
@@ -491,6 +512,7 @@ class SendsayAPI
      * @param string $email - емэйл подписчика
      *
      * @return array
+     * @throws \Exception
      */
     public function member_get($email)
     {
@@ -511,6 +533,7 @@ class SendsayAPI
      * @param  bool  $sync -  флаг асинхронного запуска
      *
      * @return array
+     * @throws \Exception
      */
     public function member_delete($data, $sync = false)
     {
@@ -540,6 +563,7 @@ class SendsayAPI
      * @param  string $format - формат выпуска
      *
      * @return array
+     * @throws \Exception
      */
     public function issue_list($from = '1900-01-01', $to = null, $groups = array(), $format = 'email')
     {
@@ -563,6 +587,7 @@ class SendsayAPI
      * @param  int $id - уникальный идентификатор выпуска
      *
      * @return array
+     * @throws \Exception
      */
     public function issue_get($id)
     {
@@ -597,6 +622,7 @@ class SendsayAPI
      * @param  int    $page   -   текущая страница
      *
      * @return array
+     * @throws \Exception
      */
     public function stat_activity($filter = array(), $result = 'save', $format = 'csv', $limit = 20, $page = 1)
     {
@@ -636,6 +662,7 @@ class SendsayAPI
      * @param  string $format    - формат вывода (csv|xlsx)
      *
      * @return array
+     * @throws \Exception
      */
     public function stat_issue(
         $from = null,
@@ -686,6 +713,7 @@ class SendsayAPI
      * @param  int    $count  -   число выбираемых строк
      *
      * @return array
+     * @throws \Exception
      */
     public function stat_uni(
         $select,
@@ -725,6 +753,7 @@ class SendsayAPI
      * @link  [https://sendsay.ru/api/api.html#C%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B3%D1%80%D1%83%D0%BF%D0%BF][Документация]
      *
      * @return array
+     * @throws \Exception
      */
     public function group_list()
     {
@@ -746,6 +775,7 @@ class SendsayAPI
      * @param  string $addr_type - тип адресов (email|msisdn)
      *
      * @return array
+     * @throws \Exception
      */
     public function group_create($name, $type = 'list', $id = null, $addr_type = 'email')
     {
@@ -772,6 +802,7 @@ class SendsayAPI
      * @param  bool   $sync -  асинхронность запуска
      *
      * @return array
+     * @throws \Exception
      */
     public function group_clean($id, $list = 'all', $sync = false)
     {
@@ -801,6 +832,7 @@ class SendsayAPI
      * @param  string $name - название группы
      *
      * @return array
+     * @throws \Exception
      */
     public function group_set($id, $name)
     {
@@ -822,6 +854,7 @@ class SendsayAPI
      * @param  bool  $filter -  возвращать фильтр группы
      *
      * @return array
+     * @throws \Exception
      */
     public function group_get($id, $filter = false)
     {
@@ -845,6 +878,7 @@ class SendsayAPI
      * @param  bool   $sync  -  асинхронность вызова
      *
      * @return array
+     * @throws \Exception
      */
     public function group_snapshot($from, $to, $clean = true, $sync = false)
     {
@@ -871,6 +905,7 @@ class SendsayAPI
      * @param  string $id -  код группы
      *
      * @return array
+     * @throws \Exception
      */
     public function group_filter_get($id)
     {
@@ -891,6 +926,7 @@ class SendsayAPI
      * @param  array  $filter - правила фильтрации
      *
      * @return array
+     * @throws \Exception
      */
     public function group_filter_set($id, $filter)
     {
@@ -911,6 +947,7 @@ class SendsayAPI
      * @param  string $id - код группы
      *
      * @return array
+     * @throws \Exception
      */
     public function group_delete($id)
     {
@@ -932,6 +969,7 @@ class SendsayAPI
      * @param  string $format - формат вывода (csv|xlsx)
      *
      * @return array
+     * @throws \Exception
      */
     public function stat_group_common($groups = array(), $result = 'save', $format = 'csv')
     {
@@ -969,6 +1007,7 @@ class SendsayAPI
      * @param  string $addr_type - тип вносимых адресов
      *
      * @return array
+     * @throws \Exception
      */
     public function member_import($data, $group = null, $exist = 'overwrite', $addr_type = 'email')
     {
@@ -993,6 +1032,7 @@ class SendsayAPI
      * @param  int $id -  код черновика
      *
      * @return array
+     * @throws \Exception
      */
     public function issue_draft_get($id)
     {
@@ -1024,6 +1064,7 @@ class SendsayAPI
      * @param  int   $id     -  код черновика
      *
      * @return array
+     * @throws \Exception
      */
     public function issue_draft_set($params, $id = null)
     {
@@ -1046,6 +1087,7 @@ class SendsayAPI
      * @param  mixed $ids - код черновика (int) или список черновиков (array) к удалению
      *
      * @return array
+     * @throws \Exception
      */
     public function issue_draft_delete($ids)
     {
@@ -1076,6 +1118,7 @@ class SendsayAPI
      * @param  string $format     - формат содержимого (html|text)
      *
      * @return array
+     * @throws \Exception
      */
     public function issue_send(
         $group,
@@ -1129,6 +1172,7 @@ class SendsayAPI
      * @link  [https://sendsay.ru/api/api.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BEc%D1%82%D0%B5%D0%B9][Документация]
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_list()
     {
@@ -1151,6 +1195,7 @@ class SendsayAPI
      * @param  bool   $pause    -  отстановка последовательности
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_create($name, $onlyonce = false, $closed = false, $rog = false, $pause = false)
     {
@@ -1175,6 +1220,7 @@ class SendsayAPI
      * @param  int $id - код последовательности
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_get($id)
     {
@@ -1199,6 +1245,7 @@ class SendsayAPI
      * @param  bool   $pause    -  отстановка последовательности
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_set($id, $name = null, $onlyonce = null, $closed = null, $rog = null, $pause = null)
     {
@@ -1224,6 +1271,7 @@ class SendsayAPI
      * @param  int $id - код последовательности
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_delete($id)
     {
@@ -1243,6 +1291,7 @@ class SendsayAPI
      * @param  int $id - код последовательности
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_steps_get($id)
     {
@@ -1263,6 +1312,7 @@ class SendsayAPI
      * @param  array $steps - шаги последовательности
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_steps_set($id, $steps)
     {
@@ -1283,6 +1333,7 @@ class SendsayAPI
      * @param  int $id - код последовательности
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_stats($id)
     {
@@ -1304,6 +1355,7 @@ class SendsayAPI
      * @param  array  $steps - список интересующих шагов
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_member_list($id, $group = null, $steps = null)
     {
@@ -1327,6 +1379,7 @@ class SendsayAPI
      * @param  mixed $users -  список емэйлов (array) или код группы (string)
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_member_start($id, $users)
     {
@@ -1353,6 +1406,7 @@ class SendsayAPI
      * @param  mixed $users - список емэйлов (array) или код группы (string)
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_member_pause($id, $users)
     {
@@ -1379,6 +1433,7 @@ class SendsayAPI
      * @param  mixed $users - список емэйлов (array) или код группы (string)
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_member_resume($id, $users)
     {
@@ -1405,6 +1460,7 @@ class SendsayAPI
      * @param  mixed $users - список емэйлов (array) или код группы (string)
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_member_stop($id, $users)
     {
@@ -1431,6 +1487,7 @@ class SendsayAPI
      * @param  mixed  $id    - код последовательности (int)
      *
      * @return array
+     * @throws \Exception
      */
     public function sequence_member_membership($email, $id = null)
     {
@@ -1453,6 +1510,7 @@ class SendsayAPI
      * @param  string $to   - директория загрузки файла с именем файла (несуществующие каталоги не создаются)
      *
      * @return array
+     * @throws \Exception
      */
     public function put_file($from, $to)
     {
@@ -1475,6 +1533,7 @@ class SendsayAPI
      * @param $path - string  полный путь с названием каталога (несуществующие каталоги создаются)
      *
      * @return array
+     * @throws \Exception
      */
     public function mkdir($path)
     {
@@ -1496,6 +1555,7 @@ class SendsayAPI
      * @param  string $path - полный путь с названием каталога
      *
      * @return array
+     * @throws \Exception
      */
     public function rm($path)
     {
@@ -1514,6 +1574,7 @@ class SendsayAPI
      * @link  [https://sendsay.ru/api/api.html#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8][Документация]
      *
      * @return array
+     * @throws \Exception
      */
     public function sys_settings_get()
     {
@@ -1532,6 +1593,7 @@ class SendsayAPI
      * @param  array $options - массив изменяемых параметров
      *
      * @return array
+     * @throws \Exception
      */
     public function sys_settings_set($options)
     {
@@ -1551,6 +1613,7 @@ class SendsayAPI
      * @param  array $options - массив изменяемых параметров
      *
      * @return array
+     * @throws \Exception
      */
     public function sys_storage_get($options)
     {
@@ -1568,6 +1631,7 @@ class SendsayAPI
      * @link  [https://sendsay.ru/api/api.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9][Документация]
      *
      * @return array
+     * @throws \Exception
      */
     public function user_list()
     {
@@ -1588,6 +1652,7 @@ class SendsayAPI
      * @param  string $email    - адрес получателя письма с данными пользователя
      *
      * @return array
+     * @throws \Exception
      */
     public function user_create($login, $password, $email = null)
     {
@@ -1610,6 +1675,7 @@ class SendsayAPI
      * @param  string $login - саблогин
      *
      * @return array
+     * @throws \Exception
      */
     public function user_delete($login)
     {
@@ -1634,6 +1700,7 @@ class SendsayAPI
      * @param  string $email        - адрес получателя письма с данными пользователя
      *
      * @return array
+     * @throws \Exception
      */
     public function user_set($login, $status, $old_password = null, $new_password = null, $email = null)
     {
@@ -1659,6 +1726,7 @@ class SendsayAPI
      * @param  string $new_password - новый пароль
      *
      * @return array
+     * @throws \Exception
      */
     public function sys_password_set($old_password, $new_password)
     {
@@ -1680,6 +1748,7 @@ class SendsayAPI
      * @param  string $text  - текст сообщения
      *
      * @return array
+     * @throws \Exception
      */
     public function sys_message($email, $text)
     {
@@ -1701,6 +1770,7 @@ class SendsayAPI
      * @param  string $to   - дата события по (формат ГГГГ-ММ-ДД ЧЧ:ММ:СС)
      *
      * @return array
+     * @throws \Exception
      */
     public function sys_log($from = null, $to = null)
     {
@@ -1722,6 +1792,7 @@ class SendsayAPI
      * @param  string $login -  логин пользователя
      *
      * @return array
+     * @throws \Exception
      */
     public function rights_get($login)
     {
@@ -1742,6 +1813,7 @@ class SendsayAPI
      * @param  array  $rights - список устанавливаемых прав
      *
      * @return array
+     * @throws \Exception
      */
     public function rights_set($login, $rights)
     {
@@ -1760,6 +1832,7 @@ class SendsayAPI
      * @link  [https://sendsay.ru/api/api.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D1%85-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B9][Документация]
      *
      * @return array
+     * @throws \Exception
      */
     public function authext_list()
     {
@@ -1778,6 +1851,7 @@ class SendsayAPI
      * @param  string $id - код внешней авторизации
      *
      * @return array
+     * @throws \Exception
      */
     public function authext_get($id)
     {
@@ -1798,6 +1872,7 @@ class SendsayAPI
      * @param  string $token - токен внешней авторизации (refresh token)
      *
      * @return array
+     * @throws \Exception
      */
     public function authext_create($login, $token)
     {
@@ -1821,6 +1896,7 @@ class SendsayAPI
      * @param  string $token - токен внешней авторизации (refresh token)
      *
      * @return array
+     * @throws \Exception
      */
     public function authext_set($id, $login = null, $token = null)
     {
@@ -1844,6 +1920,7 @@ class SendsayAPI
      * @param  string $id - код внешней авторизации
      *
      * @return array
+     * @throws \Exception
      */
     public function authext_delete($id)
     {
@@ -1863,6 +1940,7 @@ class SendsayAPI
      * @param  string $id - код внешней авторизации
      *
      * @return array
+     * @throws \Exception
      */
     public function authext_ga_props($id)
     {
@@ -1944,6 +2022,7 @@ class SendsayAPI
      * @param string $redirect
      *
      * @return array
+     * @throws \Exception
      */
     private function send($redirect = '')
     {
@@ -1960,12 +2039,30 @@ class SendsayAPI
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         $result = curl_exec($curl);
+        $info = curl_getinfo($curl);
         curl_close($curl);
 
         $json = json_decode($result, true);
 
         if ($this->debug) {
             echo 'Ответ:' . "\n" . $this->json_dump($result) . '</pre>';
+        }
+
+        if (array_key_exists('errors', $json)) {
+            if (!$this->debug) {
+                $message = implode(';', array_column($json['errors'], 'explain'));
+            } else {
+                $errors_id = implode(';', array_column($json['errors'], 'id'));
+                $errors_text = implode(';', array_column($json['errors'], 'explain'));
+
+                $message = json_encode([
+                    'http_code'   => $info['http_code'],
+                    'errors_id'   => $errors_id,
+                    'errors_text' => $errors_text
+                ], JSON_UNESCAPED_UNICODE);
+            }
+
+            throw new \Exception($message);
         }
 
         if (!$json) {
