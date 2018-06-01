@@ -612,8 +612,10 @@ class SendsayAPI
         switch ($this->params['result']) {
             case 'email':
                 $this->params['email'] = $result;
+                break;
             case 'save':
                 $this->params['result.format'] = $format;
+                break;
         }
 
         return $this->send();
@@ -660,8 +662,10 @@ class SendsayAPI
         switch ($this->params['result']) {
             case 'email':
                 $this->params['email'] = $result;
+                break;
             case 'save':
                 $this->params['result.format'] = $format;
+                break;
         }
 
         return $this->send();
@@ -706,8 +710,10 @@ class SendsayAPI
         switch ($this->params['result']) {
             case 'email':
                 $this->params['email'] = $result;
+                break;
             case 'save':
                 $this->params['result.format'] = $format;
+                break;
         }
 
         return $this->send();
@@ -938,8 +944,10 @@ class SendsayAPI
         switch ($this->params['result']) {
             case 'email':
                 $this->params['email'] = $result;
+                break;
             case 'save':
                 $this->params['result.format'] = $format;
+                break;
         }
 
         return $this->send();
@@ -1952,13 +1960,13 @@ class SendsayAPI
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         $result = curl_exec($curl);
+        curl_close($curl);
+
         $json = json_decode($result, true);
 
         if ($this->debug) {
             echo 'Ответ:' . "\n" . $this->json_dump($result) . '</pre>';
         }
-
-        curl_close($curl);
 
         if (!$json) {
             return array('error' => 'error/bad_json', 'explain' => $result);
